@@ -286,6 +286,10 @@ body {
         display: none;
     }
 
+    .card-button {
+        order: 1;
+    }
+
     .card-socials::after {
         display: none;
     }
