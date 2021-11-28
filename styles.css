@@ -8,6 +8,22 @@ body {
     font-size: 13px;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 .card {
@@ -16,7 +32,6 @@ body {
     box-shadow: 0px 16px 24px 2px hsl(212deg 23% 69% / 43%);
     max-width: 760px;
     margin: 0 auto;
-    margin-top: 7rem;
     display: flex;
 }
 
@@ -180,6 +195,51 @@ body {
     color: #ff1b68;
 }
 
+.card-socials.card-socials__fade-in {
+    animation: fade-in__box 0.5s ease;
+}
+
+.card-socials.card-socials__fade-out {
+    animation: fade-out__box 0.5s ease;
+}
+
+@keyframes fade-in__background {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in__box {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fade-out__box {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+
+    99% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
 
 @media (max-width: 768px) {
     .card {
@@ -243,6 +303,7 @@ body {
 
     .card-body__bottom.open {
         background-color: hsl(217, 19%, 35%);
+        animation: fade-in__background 0.3s ease;
     }
 
     .card-body__bottom.open .card-socials {
