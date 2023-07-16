@@ -19,3 +19,9 @@ function share() {
     }, 210);
   }
 }
+
+document.addEventListener('click', function(event) {
+  if (!socialsBox.contains(event.target) && !shareButton.contains(event.target)) {
+    share();
+  }
+});
